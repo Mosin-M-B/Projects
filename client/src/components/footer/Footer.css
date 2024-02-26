@@ -1,0 +1,14 @@
+footer {
+   
+    background-color: var(--btn-color); /* Footer background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding around the content */
+    position: fixed; /* Position the footer */
+    bottom: 0; /* Align the footer to the bottom of the viewport */
+    width: 100%; /* Make the footer span the entire width */
+  }
+  
+  /* Center the text in the footer */
+  footer p {
+    text-align: center;
+  }

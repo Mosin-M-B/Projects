@@ -1,0 +1,798 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+:root {
+  --bg-color: #f4f3ff;
+  --btn-color: #646cff;
+  --dark-color: #242424;
+  --helper-color: #99b9ff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/*? base style */
+
+body {
+  margin: 0;
+  /* display: flex;
+  place-items: center; */
+  /* min-width: 32rem; */
+  min-height: 100vh;
+}
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+/*?  Help me reach 1 Million subs 👉 https://youtube.com/thapatechnical */
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+}
+
+h1 {
+  font-size: 5.4rem;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+p,
+li,
+label,
+input,
+textarea {
+  font-size: 1.8rem;
+  line-height: 1.56;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.06rem;
+}
+
+a {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: var(--btn-color);
+  text-decoration: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/*? layout Rule  */
+
+.container {
+  max-width: 140rem;
+  padding: 4rem 2.4rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 6.4rem;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*? Module Rules / Reusable */
+button {
+  text-transform: capitalize;
+  padding: 1rem 2.2rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: var(--btn-color);
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: border-color 0.3s;
+  -webkit-transition: border-color 0.3s;
+  -moz-transition: border-color 0.3s;
+  -ms-transition: border-color 0.3s;
+  -o-transition: border-color 0.3s;
+}
+button:hover {
+  box-shadow: inset 0 0 0 0.2rem;
+}
+.secondary-btn {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
+  margin-left: 3.2rem;
+}
+.third-btn {
+  font-weight: 500;
+  background-color: #FF4742;
+  box-shadow: inset 0 0 0 0.2rem #FF4742;
+  margin-left: 3.2rem;
+}
+
+/***** Hero Section *****/
+
+.section-hero {
+  & .grid {
+    align-items: center;
+  }
+
+  .hero-content {
+    & p {
+      margin: 2.4rem 0 4.8rem 0;
+      &:first-child {
+        margin: 0 0 1.2rem 0;
+      }
+    }
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    & img {
+      width: 70%;
+      height: auto;
+    }
+  }
+}
+
+/***** End Hero  *****/
+
+/***** analytics Section *****/
+
+.section-analytics {
+  margin: 9.6rem 0;
+
+  & .container {
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+  }
+
+  & .grid {
+    color: var(--dark-color);
+
+    & .div1 {
+      text-align: center;
+      border-right: 0.2rem solid var(--dark-color);
+
+      &:last-child {
+        border: none;
+      }
+      & h2 {
+        font-size: 4.8rem;
+      }
+      & p {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+/*? state rules  */
+
+button:hover {
+  box-shadow: inset 0 0 0 0.2rem var(--bg-color);
+  /* border: 0.2rem solid #fff; */
+}
+
+a:hover,
+a.active {
+  color: #535bf2;
+}
+
+/* pseduo elements  */
+.main-heading {
+  position: relative;
+  text-transform: capitalize;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 0.5rem;
+    background-color: var(--btn-color);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover,
+  a.active {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+/***** End analytics Section *****/
+
+/** -----------------------
+** contact section css
+** -------------------------  */
+.section-contact {
+  & .contact-content {
+    padding: 0;
+
+    & h1 {
+      margin-bottom: 3.2rem;
+    }
+  }
+  & .container {
+    padding-top: 3.2rem;
+    display: flex;
+  }
+  & .contact-img {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  & .section-form {
+    width: 100%;
+    & form {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+      width: 100%;
+    }
+    & label {
+      display: block;
+      margin-bottom: 1.2rem;
+      text-transform: capitalize;
+    }
+
+    & input,
+    textarea {
+      width: 80%;
+      padding: 0.4rem 0.6rem;
+    }
+  }
+}
+/*error page*/
+/** -----------------------
+** error page section css
+** -------------------------  */
+#error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#error-page .content {
+  max-width: 70rem;
+  text-align: center;
+}
+.content h2.header {
+  font-size: 30vh;
+  line-height: 1em;
+  animation: animate 10s ease-in-out infinite;
+  background: -webkit-repeating-linear-gradient(
+    -60deg,
+    #71b7e6,
+    var(--btn-color),
+    #b98acc,
+    #ee8176,
+    #b98acc,
+    var(--btn-color),
+    #9b59b6
+  );
+  background-size: 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+}
+@keyframes animate {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+.content h4 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.content .btns {
+  margin: 25px 0;
+  display: inline-flex;
+  justify-content: center;
+}
+.content .btns a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid var(--btn-color);
+  color: var(--btn-color);
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.content .btns a:hover {
+  background: var(--btn-color);
+  color: #fff;
+}
+
+/** -----------------------
+** registration section css
+** -------------------------  */
+
+.section-registration {
+  padding: 0 3.2rem;
+
+  & .container {
+    /* background-color: #fff; */
+    padding-top: 3.2rem;
+    align-items: center;
+
+    & img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  & .registration-form {
+    & label {
+      display: block;
+      margin: 2.4rem 0 0.8rem 0;
+      text-transform: capitalize;
+    }
+    & input {
+      width: 80%;
+      padding: 0.6rem 0.6rem;
+    }
+
+    & button {
+      margin-top: 3.2rem;
+    }
+  }
+}
+
+.adminNav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.adminContainer {
+  display: grid;
+  padding-top: 0;
+  grid-template-columns: 1fr 3fr;
+}
+
+.adminList {
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.adminList li {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+/** -----------------------
+** services section css
+** -------------------------  */
+
+.section-services {
+  & .container:first-child {
+    padding: 0;
+  }
+  & .grid-three-cols {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+  }
+
+  & .card {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    border: 0.2rem solid var(--helper-color);
+
+    & .card-img {
+      text-align: center;
+      & img {
+        width: 70%;
+        height: auto;
+        filter: drop-shadow(0 0 2rem 2rem #fff);
+        -webkit-filter: drop-shadow(0 0 2rem 2rem #fff);
+      }
+    }
+
+    & .card-details {
+      padding: 2.4rem;
+
+      & .grid p {
+        font-size: 1.4rem;
+      }
+
+      & h2 {
+        font-size: 3.2rem;
+        margin: 1.2rem 0 2.4rem 0;
+      }
+    }
+  }
+}
+/** -----------------------
+** Admin section css
+/** -------------------------  */
+
+table{
+  width: auto;
+  background: #fff;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px ;
+  border-collapse: collapse;
+  border-radius: 1rem;
+  -webkit-border-radius:1rem;
+  -moz-border-radius:1rem ;
+}
+
+body tr{
+  display: grid;
+  grid-template-columns: repeat(6,minmax(5rem,1fr));
+  align-items: center;
+  box-shadow: 0 0.3rem 0 gray;
+  margin-bottom: 10px;
+  border-bottom: 4px solid transparent;
+  color: var(--bg-color);
+  &:last-child{
+    box-shadow: none;
+  }
+}
+td,th{
+  text-align: center;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--dark-color);
+  width: 30rem;
+  &:nth-child(2){
+    text-transform: capitalize;
+  }
+  &:first-child{
+    text-align: center;
+  }
+  
+}
+
+
+/** -----------------------
+** media query section css
+/** -------------------------  */
+
+@media (width <= 998px) {
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .section-services {
+    & .grid-three-cols {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
+  }
+
+  .section-registration {
+    & .container {
+      & .reg-img img {
+        width: 60%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (width <= 798px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .section-registration {
+    & .container {
+      & .reg-img img {
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    & .registration-form {
+      & input {
+        width: 100%;
+        padding: 0.6rem 0.6rem;
+      }
+    }
+  }
+}
+/** -----------------------
+** Admin Contact section css
+/** -------------------------  */
+
+/* Styles for contact cards */
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-card {
+  position: relative;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px) scale(1.05); /* Scale up on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card-content {
+  padding: 20px;
+}
+
+.contact-card h2 {
+  font-size: 22px;
+  color: #333333;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  transition: color 0.3s ease; /* Color change animation */
+}
+
+.contact-card p {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  transition: color 0.3s ease; /* Color change animation */
+}
+
+.contact-card p:last-child {
+  margin-bottom: 0;
+}
+
+.delete-btn {
+  background-color: #ff5733;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #ff8c66;
+}
+
+/* Additional animations */
+.contact-card:hover .delete-btn {
+  transform: translateY(5px); /* Move delete button down on hover */
+}
+
+.contact-card:hover h2,
+.contact-card:hover p {
+  color: #ff5733; /* Change text color on hover */
+}
+/** -----------------------
+** Admin table section css
+/** -------------------------  */
+
+.container1 {
+ /* Set maximum width for the container */
+  margin: 0 auto; /* Center align the container */
+  padding: 20px; /* Add padding around the content */
+  animation: slideInTop 1s ease forwards; /* Apply slide-in animation */
+  opacity: 0; /* Initially hide the container */
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 100; /* Start with opacity 0 (hidden) */
+    transform: translateY(-50px); /* Start position above the final position */
+  }
+  to {
+    opacity: 1000; /* End with opacity 1 (fully visible) */
+    transform: translateY(0); /* End position */
+  }
+}
+
+.h1 {
+  font-size: 30px; /* Set font size for the heading */
+  color: #fff; /* Set color for the text */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px; /* Add margin at the bottom of the heading */
+}
+
+
+/* Styles for admin users section */
+.admin-users-section {
+  padding: 50px 0;
+}
+
+/* Container for admin users data */
+.admin-users {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Button styles */
+.btn1 {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn1:hover {
+  background-color: #0056b3;
+}
+
+/* Delete button styles */
+.third-btn {
+  background-color: #dc3545;
+}
+
+.third-btn:hover {
+  background-color: #bd2130;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  /* Adjust padding for smaller screens */
+  .admin-users-section {
+    padding: 30px 0;
+  }
+
+  /* Make table responsive */
+  table {
+    width: 100%;
+  }
+
+  /* Ensure table cells are visible on smaller screens */
+  th, td {
+    overflow: visible;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  /* Center align table cells on smaller screens */
+  th, td {
+    text-align: center;
+  }
+}
+
+
+
+/**-----------------
+/** Admin Navbar
+/**-----------------*/
+/* Styles for main header */
+header{
+  position: sticky;
+  top: 0;
+}
+.main-header {
+  background-color: #007bff; /* Header background color */
+  color: #ffffff; /* Text color */
+  padding: 20px 0; /* Top and bottom padding */
+  animation: fadeInDown 0.5s ease-out; /* Animation for header */
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+/* Container for header content */
+.header-container {
+  max-width: 1200px; /* Maximum width of the container */
+  margin: 0 auto; /* Center align the container */
+  padding: 0 20px; /* Left and right padding */
+  animation: slideInLeft 0.5s ease-out; /* Animation for container */
+}
+
+/* Main navigation styles */
+.main-nav {
+  text-align: center; /* Center align navigation links */
+  animation: fadeInUp 0.5s ease-out; /* Animation for navigation */
+}
+
+/* Navigation list styles */
+.nav-list {
+  list-style-type: none; /* Remove default list styles */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Navigation item styles */
+.nav-item {
+  display: inline-block; /* Display items inline-block for spacing */
+  margin-right: 20px; /* Add right margin between items */
+  animation: flipInX 0.5s ease-out; /* Animation for navigation items */
+}
+
+/* Navigation link styles */
+.nav-link {
+  text-decoration: none; /* Remove underline from links */
+  color: #ffffff; /* Link text color */
+  padding: 10px 15px; /* Padding around links */
+  border-radius: 5px; /* Add border radius */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  animation: fadeInRight 0.5s ease-out; /* Animation for navigation links */
+}
+
+/* Navigation link hover styles */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light background color on hover */
+}
+
+/* Navigation icon styles */
+.nav-icon {
+  margin-right: 5px; /* Add margin between icon and text */
+  vertical-align: middle; /* Align icon vertically with text */
+  animation: rotateIn 0.5s ease-out; /* Animation for navigation icons */
+}
+.password-toggle-btn{
+  margin-left: 10px;
+}
