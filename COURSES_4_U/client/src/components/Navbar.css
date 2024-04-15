@@ -1,0 +1,90 @@
+.containernav {
+  max-width: 140rem;
+ align-items: center;
+ padding-right: 2.2rem;
+ padding-left: 3.3rem;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  top: 0;
+ 
+}
+ul {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.scrolled {
+  color: #ffffff; /* Change font color to white */
+}
+
+/* Navbar container */
+header {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 20px 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100px;
+}
+
+/* Scrolled state */
+header.scrolled {
+  background-color: #646cff;
+  color: #343a40;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo-brand img {
+  height: 80px;
+  width: 130px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffc107;
+}
