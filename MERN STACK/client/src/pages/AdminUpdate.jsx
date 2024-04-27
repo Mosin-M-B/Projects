@@ -63,7 +63,7 @@ export const AdminUpdate = () => {
           if (response.ok) {
             toast.success("Updates Successful")
           }else{
-            toast.error("Not Updated Successful")
+            toast.error("Email is already Exist")
           }
     } catch (error) {
         // console.log(error);

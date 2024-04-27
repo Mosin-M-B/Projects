@@ -31,18 +31,29 @@ const getUserById = async (req, res) => {
 //*---------------------------------
 //Update user logic
 //*---------------------------------
-const updateUserById = async (req, res) => {
+const updateUserById = async (req, res, next) => {
   try {
     const id = req.params.id;
+    const { email } = req.body;
+
+    // Check if the email already exists
+    const emailExists = await User.exists({ email: email });
+    if (emailExists) {
+      return res.status(400).json({ message: "Email already exists!!!" });
+    }
+
+    // If email doesn't exist, proceed with updating the user
     const updatedUserData = req.body;
-    const updatedData= await User.updateOne({_id:id},{
-        $set:updatedUserData
-      })
-      return res.status(200).json(updatedData)
+    const updatedData = await User.updateOne({ _id: id }, {
+      $set: updatedUserData
+    });
+
+    return res.status(200).json(updatedData);
   } catch (error) {
-    next(error)
+    next(error);
   }
-};
+}
+
 //*---------------------------------
 //Delete user logic
 //*---------------------------------
